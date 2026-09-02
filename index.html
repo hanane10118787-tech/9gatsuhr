@@ -242,6 +242,9 @@
     display:grid;
     grid-template-columns:repeat(7,1fr);
   }
+  .daysgrid{
+    position:relative;
+  }
   .weekrow div{
     text-align:center;
     font-size:12px;
@@ -275,6 +278,32 @@
   }
   .g2 .badge{ background:var(--rust); color:#fff; box-shadow:0 0 0 2px rgba(193,80,46,.18); }
   .g01 .badge{ background:var(--teal); color:#fff; box-shadow:0 0 0 2px rgba(62,140,144,.18); }
+  .badge.closed{ background:#6b7280; color:#fff; box-shadow:0 0 0 2px rgba(107,114,128,.18); }
+
+  .range-banner{
+    position:absolute;
+    top:106px;
+    left:calc(100%/7);
+    width:calc(100%/7*2);
+    height:auto;
+    display:flex;
+    justify-content:center;
+    padding-top:0;
+    border-top:none;
+    pointer-events:none;
+  }
+  .daysgrid .range-banner{
+    position:absolute;
+    height:auto;
+    padding-top:0;
+    border-top:none;
+  }
+  .range-banner .badge{
+    white-space:nowrap;
+    width:calc(100% - 8px);
+    box-sizing:border-box;
+    text-align:center;
+  }
   .g2, .g01{ font-weight:700; }
 
   .time-chip{
@@ -334,6 +363,10 @@
               <div class="g01">29<br><span class="badge">高0・1</span><span class="time-chip">19:00-20:30</span></div>
               <div class="g01">30<br><span class="badge">高0・1</span><span class="time-chip">19:00-20:30</span></div>
               <div></div><div></div><div></div>
+
+              <div class="range-banner">
+                <span class="badge closed">東進休館日</span>
+              </div>
             </div>
           </div>
         </div>
